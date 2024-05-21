@@ -4,3 +4,5 @@
   <source src="https://github.com/MarianeBS/firebaseFirestore-Handlebars/blob/main/video.mp4" type="video/mp4">
   Your browser does not support HTML video.
 </video>
+
+[![Video]("https://github.com/MarianeBS/firebaseFirestore-Handlebars/blob/main/video.mp4)]("https://github.com/MarianeBS/firebaseFirestore-Handlebars/blob/main/video.mp4)
