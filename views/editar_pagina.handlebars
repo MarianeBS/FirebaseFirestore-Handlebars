@@ -1,0 +1,76 @@
+<div class="container-wrapper">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="row">
+            <div class="col-md-12 bg-white">
+                <nav class="navbar bg-second navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="https://img.icons8.com/?size=100&id=102552&format=png&color=000000" width="50px">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link active" style="font-weight: bold;" aria-current="page" href="/">Cadastrar</a>
+                                <a class="nav-link" style="font-weight: bold;" href="/consulta">Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-12 bg-secondary">
+                &nbsp;
+                <h2 class="text-start" style="font-weight: bold;">Edição de Clientes</h2>
+                <p>
+                    <form action="/atualizar/{{this.id}}" method="POST">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 text-start">
+                                    <label class="form-label text-white">Nome:</label>
+                                    <input type="text" name="nome" class="form-control" id="nome" value="{{agendamento.nome}}">
+                                </div>
+                            </div>    
+                            <div class="col-md-6">
+                                <div class="mb-3 text-start">
+                                    <label class="form-label text-white">Telefone:</label>
+                                    <input type="text" name="telefone" class="form-control" id="telefone" value="{{agendamento.telefone}}">
+                                </div>
+                            </div>    
+                        </div>    
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3 text-start">
+                                    <label class="form-label text-white">Origem:</label>
+                                    <select name="origem" class="form-select" aria-label="Default select example">
+                                        <option value="celular" selected disabled>Escolha</option>
+                                        <option value="celular" {{#if (eq agendamento.origem "celular")}}selected{{/if}}>Celular</option>
+                                        <option value="whatsapp" {{#if (eq agendamento.origem "whatsapp")}}selected{{/if}}>Whatsapp</option>
+                                        <option value="telefone_fixo" {{#if (eq agendamento.origem "telefone_fixo")}}selected{{/if}}>Telefone Fixo</option>
+                                    </select>
+                                </div>
+                            </div>   
+                            <div class="col-md-6"> 
+                                <div class="mb-3 text-start">
+                                    <label class="form-label text-white">Data do Contato:</label>
+                                    <input type="date" name="data_contato" class="form-control" id="data_contato" value="{{agendamento.data_contato}}">
+                                </div>
+                            </div>  
+                            <div class="col-md-12"> 
+                                <div class="mb-3 text-start">
+                                    <label class="form-label text-white">Observação:</label>
+                                    <textarea name="observacao" class="form-control" id="observacao" style="height: 100px">{{agendamento.observacao}}</textarea>
+                                </div>  
+                            </div>   
+                        </div>   
+                        <div class="mb-3 text-start">
+                            <button type="submit" class="btn btn-dark">Atualizar</button>
+                        </div>
+                    </form>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,56 @@
+<div class="container-wrapper">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="row">
+            <div class="col-md-12 bg-white">
+                <nav class="navbar bg-second navbar-expand-lg">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <img src="https://img.icons8.com/?size=100&id=102552&format=png&color=000000" width="50px">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                            <div class="navbar-nav">
+                                <a class="nav-link" style="font-weight: bold;" aria-current="page" href="/">Cadastrar</a>
+                                <a class="nav-link active" style="font-weight: bold;" href="/consulta">Consultar</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="col-md-12 bg-secondary">
+                &nbsp;
+                <h2 class="text-start" style="font-weight: bold;">Consulta de Clientes</h2>
+                &nbsp;
+                <table class="table">
+                  <thead class="text-center">
+                    <tr class="bg-dark text-white">
+                      <th scope="col">Nome</th>
+                      <th scope="col">Telefone</th>
+                      <th scope="col">Origem</th>
+                      <th scope="col">Data Contato</th>
+                      <th scope="col">Observação</th>
+                      <th scope="col">Ação</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{#each agendamentos}}
+                    <tr>
+                      <td class="bg-light">{{this.nome}}</td>
+                      <td class="text-white">{{this.telefone}}</td>
+                      <td class="bg-light">{{this.origem}}</td>
+                      <td class="text-white">{{this.data_contato}}</td>
+                      <td class="bg-light">{{this.observacao}}</td>
+                      <td class="text-center">
+                        <a href="/editar/{{this.id}}" class="btn btn-dark btn-sm">Editar</a>
+                        <a href="/excluir/{{this.id}}" class="btn bg-white btn-sm">Excluir</a>
+                      </td>
+                    </tr>
+                    {{/each}}
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
